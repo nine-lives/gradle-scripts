@@ -6,16 +6,18 @@ apply from: "https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/v6
 
 archivesBaseName = project.ext.library_baseName
 
-String checkstyleVersion = '8.1'
+project.ext {
+    checkstyleVersion = '8.1'
+}
 
 checkstyle {
-    configFile = new File(rootDir, "config/checkstyle/checkstyle-${checkstyleVersion}.xml")
+    configFile = new File(rootDir, "config/checkstyle/checkstyle-${project.ext.checkstyleVersion}.xml")
     showViolations = true
 }
 
 task fetchCheckstyleRules {
     ant.get(src: "https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/config/checkstyle/checkstyle-${checkstyleVersion}.xml",
-            dest: "${rootDir}/config/checkstyle/checkstyle-${checkstyleVersion}.xml",
+            dest: "${rootDir}/config/checkstyle/checkstyle-${project.ext.checkstyleVersion}.xml",
             skipexisting: 'true')
 
     ant.get(src: "https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/config/checkstyle/checkstyle-suppressions.xml",
@@ -45,6 +47,6 @@ repositories {
 
 dependencies {
     testImplementation "org.spockframework:spock-core:1.2-groovy-2.4"
-    checkstyle('com.puppycrawl.tools:checkstyle:${checkstyleVersion}')
+    checkstyle("com.puppycrawl.tools:checkstyle:${project.ext.checkstyleVersion}")
 }
 
