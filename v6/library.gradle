@@ -14,11 +14,11 @@ checkstyle {
 }
 
 task fetchCheckstyleRules {
-    ant.get(src: 'https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/config/checkstyle/checkstyle-${checkstyleVersion}.xml',
+    ant.get(src: "https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/config/checkstyle/checkstyle-${checkstyleVersion}.xml",
             dest: "${rootDir}/config/checkstyle/checkstyle-${checkstyleVersion}.xml",
             skipexisting: 'true')
 
-    ant.get(src: 'https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/config/checkstyle/checkstyle-suppressions.xml',
+    ant.get(src: "https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/config/checkstyle/checkstyle-suppressions.xml",
             dest: "${rootDir}/config/checkstyle/checkstyle-suppressions.xml",
             skipexisting: 'true')
 }
