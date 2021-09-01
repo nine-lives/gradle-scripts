@@ -1,8 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'checkstyle'
-apply from: "$rootDir/jacoco.gradle"
-apply from: "$rootDir/publishing.gradle"
+apply from: "jacoco.gradle"
+apply from: "https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/v6/publishing.gradle"
 
 archivesBaseName = project.ext.library_baseName
 
