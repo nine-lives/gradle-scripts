@@ -38,7 +38,10 @@ task fetchCodecyReporterJar {
 }
 
 test {
-    dependsOn fetchCodecyReporterJar
+    if (project.ext.jacoco_codecy) {
+        dependsOn fetchCodecyReporterJar
+    }
+    useJUnitPlatform()
 }
 
 repositories {
@@ -47,7 +50,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation "org.spockframework:spock-core:1.2-groovy-2.4"
+    testImplementation platform("org.codehaus.groovy:groovy-bom:3.0.8")
+    testImplementation "org.spockframework:spock-core:2.0-groovy-3.0"
+//    testImplementation "org.spockframework:spock-core:1.2-groovy-2.4"
     checkstyle("com.puppycrawl.tools:checkstyle:${project.ext.checkstyleVersion}")
 }
 

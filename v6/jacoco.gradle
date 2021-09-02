@@ -117,3 +117,4 @@ def codacyLineReports(List<Node> lines) {
 }
 
 check.dependsOn jacocoTestReport
+jacocoTestReport.outputs.upToDateWhen { false }
