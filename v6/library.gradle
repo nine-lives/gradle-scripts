@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'checkstyle'
+apply plugin: 'java-library'
 apply from: "https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/v6/jacoco.gradle"
 apply from: "https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/v6/publishing.gradle"
 
