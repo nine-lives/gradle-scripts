@@ -82,6 +82,8 @@ jacocoTestReport {
     }
 }
 
+jacocoTestReport.outputs.upToDateWhen { false }
+
 def codacyPercentage(Node node) {
     def covered = node.'@covered' as Double
     def missed = node.'@missed' as Double
@@ -117,4 +119,3 @@ def codacyLineReports(List<Node> lines) {
 }
 
 check.dependsOn jacocoTestReport
-jacocoTestReport.outputs.upToDateWhen { false }
