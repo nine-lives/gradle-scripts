@@ -30,18 +30,7 @@ check {
     dependsOn fetchCheckstyleRules
 }
 
-task fetchCodecyReporterJar {
-    if (project.ext.jacoco_codecy) {
-        ant.get(src: 'https://raw.githubusercontent.com/nine-lives/gradle-scripts/main/config/lib/codacy-coverage-reporter-4.0.2-assembly.jar',
-                dest: "${rootDir}/config/lib/codacy-coverage-reporter-4.0.2-assembly.jar",
-                skipexisting: 'true')
-    }
-}
-
 test {
-    if (project.ext.jacoco_codecy) {
-        dependsOn fetchCodecyReporterJar
-    }
     useJUnitPlatform()
 }
 
