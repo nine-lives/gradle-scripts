@@ -38,6 +38,10 @@ check {
     dependsOn fetchCheckstyleRules
 }
 
+test {
+    useJUnitPlatform()
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
