@@ -8,7 +8,7 @@ dependencies {
             springframework: '4.3.22.RELEASE'
     ]
 
-    implementation (group: 'com.9ls', name: 'common-util', version: '1.0.9') {
+    implementation (group: 'com.9ls', name: 'common-util', version: '1.0.10') {
         exclude group: 'log4j', module: 'log4j'
         exclude group: 'org.slf4j', module: 'slf4j-api'
         exclude group: 'org.slf4j', module: 'slf4j-api'

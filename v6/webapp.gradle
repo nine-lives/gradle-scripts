@@ -55,9 +55,10 @@ dependencies {
 
     runtime 'javax.servlet:jstl:1.2'
     runtime 'org.apache.taglibs:taglibs-standard:1.2.5'
+    //providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
     providedCompile 'javax.servlet:servlet-api:2.5'
 
-    def tomcatVersion = '8.5.16'
+    def tomcatVersion = '8.5.75'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
             "org.apache.tomcat.embed:tomcat-embed-logging-juli:8.5.2",
             "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
