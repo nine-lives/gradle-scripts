@@ -2,9 +2,7 @@ apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'checkstyle'
 apply plugin: 'war'
-//apply plugin: com.bmuschko.gradle.tomcat.TomcatPlugin
 apply plugin: 'com.bmuschko.tomcat'
-//apply plugin: 'com.eriwen.gradle.css" version "2.14.0'
 
 project.ext {
     checkstyleVersion = '8.1'
@@ -56,29 +54,12 @@ dependencies {
 
     testImplementation platform("org.codehaus.groovy:groovy-bom:3.0.8")
     testImplementation "org.spockframework:spock-core:2.0-groovy-3.0"
-//    testImplementation "org.spockframework:spock-core:1.2-groovy-2.4"
     checkstyle("com.puppycrawl.tools:checkstyle:${project.ext.checkstyleVersion}")
 }
 
 tomcatRun {
     contextPath = '/'
     httpProtocol = 'org.apache.coyote.http11.Http11Nio2Protocol'
-    ajpProtocol  = 'org.apache.coyote.ajp.AjpNio2Protocol'
+    ajpProtocol = 'org.apache.coyote.http11.Http11Nio2Protocol'
 }
-
-//css.source {
-//    dev {
-//        css {
-//            srcDir "src/main/webapp/css"
-//            include "*.less"
-//            exclude "*.min.css"
-//        }
-//    }
-//}
-//
-//lesscss {
-//    source = css.source.dev.css.asFileTree
-//    dest = "src/main/webapp/css"
-//}
-
 
