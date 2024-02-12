@@ -4,11 +4,10 @@ println "##################################### Java Version is " +  JavaVersion.
 
 dependencies {
     ext.versions = [
-            slf4j          : '1.7.1',
             springframework: '5.3.31'
     ]
 
-    implementation (group: 'com.9ls', name: 'common-util', version: '1.0.12') {
+    implementation (group: 'com.9ls', name: 'common-util', version: '1.0.13') {
         exclude group: 'log4j', module: 'log4j'
         exclude group: 'org.slf4j', module: 'slf4j-api'
         exclude group: 'org.slf4j', module: 'slf4j-api'
@@ -27,7 +26,7 @@ dependencies {
     implementation  'joda-time:joda-time:2.12.5'
     implementation  'org.joda:joda-money:1.0.4'
     implementation  'com.google.guava:guava:18.0'
-    implementation  'com.googlecode.libphonenumber:libphonenumber:8.10.23'
+    implementation  'com.googlecode.libphonenumber:libphonenumber:8.13.12'
     implementation  'org.quartz-scheduler:quartz:2.3.2'
 
 //    implementation  'com.fasterxml.jackson.core:jackson-databind:2.8.6'
